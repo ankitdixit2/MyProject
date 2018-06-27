@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("getintodevops/hellonode")
+        app = docker.build("donttouch")
     }
 
     stage('Test image') {
@@ -27,8 +27,9 @@ node {
         /* Finally, we'll push the image with two tags:
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
-         * Pushing multiple tags is cheap, as all the layers are reused. */
-            app.push("${env.BUILD_NUMBER}")
+         * Pushing multiple tags is cheap, as all the layers are reused. 
+            app.push("${env.BUILD_NUMBER}")*/
+            sh "docker tag donttouch ankurdixit82/donttouch:latest"
             app.push("latest")        
     }
 }
