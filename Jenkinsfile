@@ -30,6 +30,6 @@ node {
          * Pushing multiple tags is cheap, as all the layers are reused. 
             app.push("${env.BUILD_NUMBER}")*/
             sh "docker tag donttouch ankurdixit82/donttouch:latest"
-            app.push("latest")        
+            sh "docker push ankurdixit82/donttouch:latest"
     }
 }
