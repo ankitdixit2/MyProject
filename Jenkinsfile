@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("ankitdixit2/MyProject")
+        app = docker.build("ankitdixit2/myprojectdocker")
     }
 
     stage('Test image') {
